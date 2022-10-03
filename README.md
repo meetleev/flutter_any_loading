@@ -38,7 +38,7 @@ Then, you can:
 
 ``` dart
 AnyLoading.showToast('msg');
-AnyLoading.showModal(title: 'title', content: 'content', success: (bool isSuccess) => print('isSuccess---$isSuccess'));
+AnyLoading.showModal(title: 'title', content: 'content', success: (bool isSuccess) => print('isSuccess--->$isSuccess'));
 AnyLoading.showLoading(title: 'Loading', maskType: AnyLoadingMaskType.black, style:AnyLoadingStyle.dark());
 AnyLoading.showNetLoading(title: 'Loading', position: AlignmentDirectional.center, 
                           delayShowIndicatorDuration: Duration(seconds: 5));

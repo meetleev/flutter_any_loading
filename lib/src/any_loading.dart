@@ -135,10 +135,11 @@ class AnyLoading {
     );
     await showBlockInputLayer(
         style: loadingStyle, maskType: AnyLoadingMaskType.clear);
+    _instance._cancelTimers();
     Completer completer = Completer();
     _instance._netLoadingIndicatorDelayTimer =
         Timer(delayShowIndicatorDuration, () {
-      completer.complete();
+      if (null != _instance._overlayEntryWidget) completer.complete();
     });
     return completer.future.whenComplete(() => showLoading(
         title: title,

@@ -1,6 +1,6 @@
 name: any_loading
 description: Use without context, showToast/showLoading/showNetLoading/showModal for Flutter.
-version: 0.0.1
+version: 0.0.1+1
 homepage: https://github.com/GLeeWei
 repository: https://github.com/GLeeWei/flutter_any_loading
 
