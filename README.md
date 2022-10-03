@@ -7,8 +7,8 @@ Use without context, showToast/showSuccess/showError/showLoading/showNetLoading/
 
 ## Features
 
-* support toast, modelDialog, loading.
-* support showNetLoading. Block the ui event to delay the display of the loading bar for a few seconds.
+* support Toast, ModalDialog, Loading.
+* support NetLoading. Block the ui event to delay the display of the loading bar for a few seconds.
 
 ## Getting started
 
