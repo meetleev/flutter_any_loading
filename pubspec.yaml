@@ -1,8 +1,8 @@
 name: any_loading
 description: Use without context, showToast/showLoading/showNetLoading/showModal for Flutter.
-version: 0.0.1+1
-homepage: https://github.com/GLeeWei
-repository: https://github.com/GLeeWei/flutter_any_loading
+version: 0.0.1+2
+homepage: https://github.com/meetleev
+repository: https://github.com/meetleev/flutter_any_loading
 
 environment:
   sdk: '>=2.18.1 <3.0.0'
