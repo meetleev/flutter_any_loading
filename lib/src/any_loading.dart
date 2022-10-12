@@ -128,6 +128,7 @@ class AnyLoading {
       animationDuration: animationDuration,
       contentPadding: contentPadding,
       position: position,
+      titleTextStyle: const TextStyle(color: Colors.white),
       contentDecoration: contentDecoration ??
           BoxDecoration(
               color: Colors.black.withOpacity(0.9),
