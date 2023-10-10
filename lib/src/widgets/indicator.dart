@@ -1,7 +1,6 @@
+import 'package:any_loading/src/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-
-import '../../any_loading.dart';
 
 class AnyLoadingIndicator extends StatelessWidget {
   final AnyLoadingIndicatorStyle? indicatorStyle;
@@ -160,6 +159,20 @@ class AnyLoadingIndicator extends StatelessWidget {
             size: size,
             delay: indicatorStyle.delay ?? const Duration(milliseconds: 50));
         width = size * 2;
+        break;
+      case AnyLoadingIndicatorType.waveSpinner:
+        indicator = SpinKitWaveSpinner(
+            color: color,
+            size: size,
+            trackColor: indicatorStyle.trackColor ?? const Color(0x68757575),
+            waveColor: indicatorStyle.waveColor ?? const Color(0x68757575));
+        break;
+      case AnyLoadingIndicatorType.pulsingGrid:
+        indicator = SpinKitPulsingGrid(
+          color: color,
+          size: size,
+          boxShape: indicatorStyle.shape ?? BoxShape.circle,
+        );
         break;
     }
     return SizedBox(

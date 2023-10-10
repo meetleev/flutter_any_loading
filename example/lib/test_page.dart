@@ -37,8 +37,9 @@ class _TestPageState extends State<TestPage> {
 
   AlignmentGeometry get _position {
     int idx = _positionGBController.selectedIndex ?? 0;
-    if (_positionStrings.length - 1 == idx)
+    if (_positionStrings.length - 1 == idx) {
       return const AlignmentDirectional(0, 0.9);
+    }
     return [
       AlignmentDirectional.topCenter,
       AlignmentDirectional.center,
@@ -80,7 +81,9 @@ class _TestPageState extends State<TestPage> {
     'DualRing',
     'PianoWave',
     'DancingSquare',
-    'ThreeInOut'
+    'ThreeInOut',
+    'WaveSpinner',
+    'PulsingGrid'
   ];
 
   AnyLoadingIndicatorType _indicatorStyle = AnyLoadingIndicatorType.circle;
@@ -174,13 +177,13 @@ class _TestPageState extends State<TestPage> {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            TextButton(onPressed: _onPressedShow, child: const Text('show')),
+            TextButton(onPressed: _onPressedShow, child: const Text('Show')),
             const SizedBox(
               width: 5,
             ),
             TextButton(
                 onPressed: () => AnyLoading.dismiss(),
-                child: const Text('dismiss'))
+                child: const Text('Dismiss'))
           ],
         ),
         if (_Action.netLoading == _action && _Action.model != _action)
@@ -245,7 +248,7 @@ class _TestPageState extends State<TestPage> {
       children: [
         const Divider(),
         const Center(
-          child: Text('DelayShowIndicatorDuration'),
+          child: Text('ShowIndicator DelayDuration'),
         ),
         const SizedBox(
           height: 8,
@@ -363,7 +366,7 @@ class _TestPageState extends State<TestPage> {
         AnyLoading.showModal(
             title: 'title',
             content: 'content',
-            success: (bool isSuccess) => print('isSuccess---$isSuccess'));
+            success: (bool isSuccess) => debugPrint('isSuccess---$isSuccess'));
         break;
     }
   }

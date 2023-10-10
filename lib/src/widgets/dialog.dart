@@ -1,6 +1,6 @@
+import 'package:any_loading/src/theme.dart';
 import 'package:flutter/material.dart';
 
-import '../../any_loading.dart';
 
 typedef ModelButtonOnTap = Function(bool isSuccess);
 

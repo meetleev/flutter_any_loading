@@ -42,7 +42,9 @@ enum AnyLoadingIndicatorType {
   dualRing,
   pianoWave,
   dancingSquare,
-  threeInOut
+  threeInOut,
+  waveSpinner,
+  pulsingGrid
 }
 
 /// IndicatorStyle used for [AnyLoadingIndicator].
@@ -91,6 +93,12 @@ class AnyLoadingIndicatorStyle {
   /// only used for ripple
   final double? borderWidth;
 
+  /// only used for WaveSpinner
+  final Color? trackColor;
+
+  /// only used for WaveSpinner
+  final Color? waveColor;
+
   const AnyLoadingIndicatorStyle({
     this.indicatorType = AnyLoadingIndicatorType.circle,
     this.color,
@@ -101,6 +109,8 @@ class AnyLoadingIndicatorStyle {
     this.lineWidth,
     this.borderWidth,
     this.delay,
+    this.trackColor,
+    this.waveColor,
   });
 
   factory AnyLoadingIndicatorStyle.dark(

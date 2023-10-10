@@ -1,12 +1,17 @@
+## 0.0.2
+
+* Aligns Dart and Flutter SDK constraints.
+* Add waveSpinner, pulsingGrid loading indicators animation
+
 ## 0.0.1+2
 
-* update readme.md.
+* Update readme.md.
 
 ## 0.0.1+1
 
-* fix some bugs.
+* Fix some bugs.
 
 ## 0.0.1
 
-* initial release.
-* support showToast/showSuccess/showError/showLoading/showNetLoading/showModal.
+* Initial release.
+* Support showToast/showSuccess/showError/showLoading/showNetLoading/showModal.
