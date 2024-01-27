@@ -1,7 +1,6 @@
 import 'package:any_loading/src/theme.dart';
 import 'package:flutter/material.dart';
 
-
 typedef ModelButtonOnTap = Function(bool isSuccess);
 
 class AnyModelDialog extends StatelessWidget {
@@ -20,36 +19,43 @@ class AnyModelDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var sys = MediaQuery.of(context);
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Expanded(
-            child: SizedBox(
-          height: 50,
-          child: null != title
-              ? Text(
-                  title!,
-                  style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w600,
-                      color: anyModalStyle.titleColor),
-                )
-              : null,
-        )),
-        Expanded(
-          flex: 10,
-          child: Center(
-            child: Text(
-              content,
-              style: TextStyle(color: anyModalStyle.titleColor),
+    return LayoutBuilder(builder: (BuildContext context, BoxConstraints constraints) {
+      print('ssssss--- ${constraints}');
+      return Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Expanded(
+            child: null != title
+                ? Text(
+              title!,
+              style: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.w600,
+                  color: anyModalStyle.titleColor),
+            )
+                : Container(),
+          ),
+          // SizedBox(height: constraints.minHeight * 0.6,
+          //   child: Center(
+          //     child: Text(
+          //       content,
+          //       style: TextStyle(color: anyModalStyle.titleColor),
+          //     ),
+          //   ),
+          // ),
+          Expanded(flex: 3,
+            child: Center(
+              child: Text(
+                content,
+                style: TextStyle(color: anyModalStyle.titleColor),
+              ),
             ),
           ),
-        ),
-        const Divider(),
-        anyModalStyle.showCancel
-            ? Expanded(
-                child: SizedBox(
-                height: 50,
+          const Divider(),
+          anyModalStyle.showCancel
+              ? Expanded(
+              child: SizedBox(
+                // height: 50,
                 width: sys.size.width * 0.4,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -58,7 +64,7 @@ class AnyModelDialog extends StatelessWidget {
                         onPressed: () => success.call(false),
                         child: Text(anyModalStyle.cancelText ?? 'Cancel',
                             style:
-                                TextStyle(color: anyModalStyle.cancelColor))),
+                            TextStyle(color: anyModalStyle.cancelColor))),
                     const VerticalDivider(),
                     TextButton(
                         onPressed: () => success.call(true),
@@ -69,11 +75,12 @@ class AnyModelDialog extends StatelessWidget {
                   ],
                 ),
               ))
-            : TextButton(
-                onPressed: () => success.call(false),
-                child: Text(anyModalStyle.confirmText,
-                    style: TextStyle(color: anyModalStyle.confirmColor)))
-      ],
-    );
+              : TextButton(
+              onPressed: () => success.call(false),
+              child: Text(anyModalStyle.confirmText,
+                  style: TextStyle(color: anyModalStyle.confirmColor)))
+        ],
+      );
+    },);
   }
 }

@@ -245,6 +245,9 @@ class AnyLoadingStyle {
               color: Colors.white, borderRadius: BorderRadius.circular(5)));
 }
 
+const BoxConstraints _defaultAnyModalConstraints =
+    BoxConstraints.expand(width: 320, height: 240);
+
 class AnyModalStyle {
   /// Whether to show the cancel button, default true.
   final bool showCancel;
@@ -267,8 +270,8 @@ class AnyModalStyle {
   /// content text color.
   final Color contentColor;
 
-  /// size percentage of dialog container, default Size(0.7, 0.6).
-  final Size? dialogSizePercent;
+  /// constraints of dialog container, default width 320, height 240.
+  final BoxConstraints constraints;
 
   AnyModalStyle({
     required this.showCancel,
@@ -278,7 +281,7 @@ class AnyModalStyle {
     this.cancelColor,
     this.confirmColor,
     this.titleColor,
-    this.dialogSizePercent,
+    this.constraints = _defaultAnyModalConstraints,
   });
 
   factory AnyModalStyle.light(
@@ -287,7 +290,7 @@ class AnyModalStyle {
           Color? cancelColor,
           String confirmText = 'Confirm',
           Color? confirmColor,
-          Size? dialogSizePercent}) =>
+          BoxConstraints? constraints}) =>
       AnyModalStyle(
           showCancel: showCancel,
           cancelColor: cancelColor ?? Colors.black,
@@ -295,7 +298,7 @@ class AnyModalStyle {
           cancelText: cancelText,
           contentColor: Colors.black,
           titleColor: Colors.black,
-          dialogSizePercent: dialogSizePercent ?? const Size(0.7, 0.6),
+          constraints: constraints ?? _defaultAnyModalConstraints,
           confirmColor: confirmColor ?? Color(int.parse('0xff576B95')));
 
   factory AnyModalStyle.dark(
@@ -304,7 +307,7 @@ class AnyModalStyle {
           Color? cancelColor,
           String confirmText = 'Confirm',
           Color? confirmColor,
-          Size? dialogSizePercent}) =>
+          BoxConstraints? constraints}) =>
       AnyModalStyle(
           showCancel: showCancel,
           cancelColor: cancelColor ?? Colors.white70,
@@ -312,7 +315,7 @@ class AnyModalStyle {
           cancelText: cancelText,
           contentColor: Colors.white,
           titleColor: Colors.white,
-          dialogSizePercent: dialogSizePercent ?? const Size(0.7, 0.6),
+          constraints: constraints ?? _defaultAnyModalConstraints,
           confirmColor: confirmColor ?? Colors.white);
 }
 

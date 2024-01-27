@@ -175,14 +175,10 @@ class AnyLoading {
     return _instance._show(
         loadingTheme: loadingTheme,
         customContentBuilder: (BuildContext context) {
-          var sys = MediaQuery.of(context);
           return Container(
             decoration: style!.contentDecoration,
             padding: style.contentPadding,
-            width: sys.size.width *
-                (anyModalStyle!.dialogSizePercent?.width ?? 0.7),
-            height: sys.size.height *
-                (anyModalStyle.dialogSizePercent?.height ?? 0.6),
+            constraints: anyModalStyle!.constraints,
             child: dialog,
           );
         });
