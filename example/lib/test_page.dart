@@ -315,7 +315,7 @@ class _TestPageState extends State<TestPage> {
             maskType: _maskType,
             style: AnyLoadingMaskType.custom == _maskType
                 ? AnyLoadingStyle(
-                    markColor: Colors.blue.withOpacity(0.5),
+                    markColor: Colors.blue.withValues(alpha:  0.5),
                     contentDecoration: BoxDecoration(
                         color: [
                           Colors.red,
@@ -323,7 +323,7 @@ class _TestPageState extends State<TestPage> {
                           Colors.green,
                           Colors.yellow
                         ][Random().nextInt(4)]
-                            .withOpacity(0.9),
+                            .withValues(alpha: .9),
                         borderRadius: BorderRadius.circular(5)))
                 : AnyLoadingStyle.dark(position: _position),
             indicatorStyle:
@@ -334,9 +334,9 @@ class _TestPageState extends State<TestPage> {
             maskType: _maskType,
             style: AnyLoadingMaskType.custom == _maskType
                 ? AnyLoadingStyle(
-                    markColor: Colors.blue.withOpacity(0.5),
+                    markColor: Colors.blue.withValues(alpha: .5),
                     contentDecoration: BoxDecoration(
-                        color: Colors.green.withOpacity(0.9),
+                        color: Colors.green.withValues(alpha: .9),
                         borderRadius: BorderRadius.circular(5)))
                 : AnyLoadingStyle.dark(
                     position: _position,
@@ -351,9 +351,9 @@ class _TestPageState extends State<TestPage> {
             maskType: _maskType,
             style: AnyLoadingMaskType.custom == _maskType
                 ? AnyLoadingStyle(
-                    markColor: Colors.blue.withOpacity(0.5),
+                    markColor: Colors.blue.withValues(alpha: .5),
                     contentDecoration: BoxDecoration(
-                        color: Colors.green.withOpacity(0.9),
+                        color: Colors.green.withValues(alpha: .9),
                         borderRadius: BorderRadius.circular(5)))
                 : AnyLoadingStyle.dark(
                     position: _position,

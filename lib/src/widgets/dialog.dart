@@ -20,7 +20,6 @@ class AnyModelDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     var sys = MediaQuery.of(context);
     return LayoutBuilder(builder: (BuildContext context, BoxConstraints constraints) {
-      print('ssssss--- ${constraints}');
       return Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

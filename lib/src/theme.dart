@@ -219,7 +219,7 @@ class AnyLoadingStyle {
           titleTextStyle: const TextStyle(fontSize: 15.0, color: Colors.white),
           titleTextAlign: titleTextAlign ?? TextAlign.center,
           contentDecoration: BoxDecoration(
-              color: Colors.black.withOpacity(0.9),
+              color: Colors.black.withValues(alpha: .9),
               borderRadius: BorderRadius.circular(5)));
 
   factory AnyLoadingStyle.light({

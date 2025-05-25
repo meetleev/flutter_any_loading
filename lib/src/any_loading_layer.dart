@@ -58,7 +58,7 @@ class AnyLoadingLayerState extends State<AnyLoadingLayer>
       case AnyLoadingMaskType.clear:
         return Colors.transparent;
       case AnyLoadingMaskType.black:
-        return Colors.black.withOpacity(0.5);
+        return Colors.black.withValues(alpha: .5);
       case AnyLoadingMaskType.custom:
         assert(null != _loadingTheme.style.markColor, "markColor, null given!");
         return _loadingTheme.style.markColor!;
@@ -189,7 +189,7 @@ class AnyLoadingLayerState extends State<AnyLoadingLayer>
 
   Decoration _buildDefaultContentDecoration() {
     return BoxDecoration(
-        color: Colors.black.withOpacity(0.9),
+        color: Colors.black.withValues(alpha: .9),
         borderRadius: BorderRadius.circular(5));
   }
 }

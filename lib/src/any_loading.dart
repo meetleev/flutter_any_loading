@@ -131,7 +131,7 @@ class AnyLoading {
       titleTextStyle: const TextStyle(color: Colors.white),
       contentDecoration: contentDecoration ??
           BoxDecoration(
-              color: Colors.black.withOpacity(0.9),
+              color: Colors.black.withValues(alpha: .9),
               borderRadius: BorderRadius.circular(5)),
     );
     await showBlockInputLayer(
