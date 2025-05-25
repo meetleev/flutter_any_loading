@@ -19,67 +19,71 @@ class AnyModelDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var sys = MediaQuery.of(context);
-    return LayoutBuilder(builder: (BuildContext context, BoxConstraints constraints) {
-      return Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Expanded(
-            child: null != title
-                ? Text(
-              title!,
-              style: TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.w600,
-                  color: anyModalStyle.titleColor),
-            )
-                : Container(),
-          ),
-          // SizedBox(height: constraints.minHeight * 0.6,
-          //   child: Center(
-          //     child: Text(
-          //       content,
-          //       style: TextStyle(color: anyModalStyle.titleColor),
-          //     ),
-          //   ),
-          // ),
-          Expanded(flex: 3,
-            child: Center(
-              child: Text(
-                content,
-                style: TextStyle(color: anyModalStyle.titleColor),
+    return LayoutBuilder(
+      builder: (BuildContext context, BoxConstraints constraints) {
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Expanded(
+              child: null != title
+                  ? Text(
+                      title!,
+                      style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.w600,
+                          color: anyModalStyle.titleColor),
+                    )
+                  : Container(),
+            ),
+            // SizedBox(height: constraints.minHeight * 0.6,
+            //   child: Center(
+            //     child: Text(
+            //       content,
+            //       style: TextStyle(color: anyModalStyle.titleColor),
+            //     ),
+            //   ),
+            // ),
+            Expanded(
+              flex: 3,
+              child: Center(
+                child: Text(
+                  content,
+                  style: TextStyle(color: anyModalStyle.titleColor),
+                ),
               ),
             ),
-          ),
-          const Divider(),
-          anyModalStyle.showCancel
-              ? Expanded(
-              child: SizedBox(
-                // height: 50,
-                width: sys.size.width * 0.4,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    TextButton(
-                        onPressed: () => success.call(false),
-                        child: Text(anyModalStyle.cancelText ?? 'Cancel',
-                            style:
-                            TextStyle(color: anyModalStyle.cancelColor))),
-                    const VerticalDivider(),
-                    TextButton(
-                        onPressed: () => success.call(true),
-                        child: Text(
-                          anyModalStyle.confirmText,
-                          style: TextStyle(color: anyModalStyle.confirmColor),
-                        ))
-                  ],
-                ),
-              ))
-              : TextButton(
-              onPressed: () => success.call(false),
-              child: Text(anyModalStyle.confirmText,
-                  style: TextStyle(color: anyModalStyle.confirmColor)))
-        ],
-      );
-    },);
+            const Divider(),
+            anyModalStyle.showCancel
+                ? Expanded(
+                    child: SizedBox(
+                    // height: 50,
+                    width: sys.size.width * 0.4,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        TextButton(
+                            onPressed: () => success.call(false),
+                            child: Text(anyModalStyle.cancelText ?? 'Cancel',
+                                style: TextStyle(
+                                    color: anyModalStyle.cancelColor))),
+                        const VerticalDivider(),
+                        TextButton(
+                            onPressed: () => success.call(true),
+                            child: Text(
+                              anyModalStyle.confirmText,
+                              style:
+                                  TextStyle(color: anyModalStyle.confirmColor),
+                            ))
+                      ],
+                    ),
+                  ))
+                : TextButton(
+                    onPressed: () => success.call(false),
+                    child: Text(anyModalStyle.confirmText,
+                        style: TextStyle(color: anyModalStyle.confirmColor)))
+          ],
+        );
+      },
+    );
   }
 }

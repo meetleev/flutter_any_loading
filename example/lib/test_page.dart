@@ -315,7 +315,7 @@ class _TestPageState extends State<TestPage> {
             maskType: _maskType,
             style: AnyLoadingMaskType.custom == _maskType
                 ? AnyLoadingStyle(
-                    markColor: Colors.blue.withValues(alpha:  0.5),
+                    markColor: Colors.blue.withValues(alpha: 0.5),
                     contentDecoration: BoxDecoration(
                         color: [
                           Colors.red,
